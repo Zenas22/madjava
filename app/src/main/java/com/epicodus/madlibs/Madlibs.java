@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Madlibs extends AppCompatActivity {
     private TextView createStory;
@@ -24,7 +25,7 @@ public class Madlibs extends AppCompatActivity {
     private TextView input9;
     private TextView input10;
     private TextView input11;
-    private TextView input12;
+
     private EditText adj1;
     private EditText adj2;
     private EditText noun1;
@@ -33,7 +34,7 @@ public class Madlibs extends AppCompatActivity {
     private EditText noun4;
     private EditText noun5;
     private EditText noun6;
-    private EditText noun7;
+
     private EditText verb1;
     private EditText verb2;
     private EditText verb3;
@@ -57,7 +58,7 @@ public class Madlibs extends AppCompatActivity {
         input9 = (TextView) findViewById(R.id.tvInput9);
         input10 = (TextView) findViewById(R.id.tvInput10);
         input11 = (TextView) findViewById(R.id.tvInput11);
-        input12 = (TextView) findViewById(R.id.tvInput12);
+
         adj1 = (EditText) findViewById(R.id.etAdj1);
         adj2 = (EditText) findViewById(R.id.etAdj2);
         noun1 = (EditText) findViewById(R.id.etNoun1);
@@ -66,7 +67,7 @@ public class Madlibs extends AppCompatActivity {
         noun4 = (EditText) findViewById(R.id.etNoun4);
         noun5 = (EditText) findViewById(R.id.etNoun5);
         noun6 = (EditText) findViewById(R.id.etNoun6);
-        noun7 = (EditText) findViewById(R.id.etNoun7);
+
         verb1 = (EditText) findViewById(R.id.etVerb1);
         verb2 = (EditText) findViewById(R.id.etVerb2);
         verb3 = (EditText) findViewById(R.id.etVerb3);
@@ -85,7 +86,21 @@ public class Madlibs extends AppCompatActivity {
                 String bodyPart = noun5.getText().toString();
                 String random1 = noun6.getText().toString();
                 String random2 = verb3.getText().toString();
-                String random3 = noun7.getText().toString();
+
+                Intent intent = new Intent(Madlibs.this, Finish.class);
+                intent.putExtra("adjective1", adjective1);
+                intent.putExtra("adjective2", adjective2);
+                intent.putExtra("bird", bird);
+                intent.putExtra("room", room);
+                intent.putExtra("ran", ran);
+                intent.putExtra("cook", cook);
+                intent.putExtra("name", name);
+                intent.putExtra("juice", juice);
+                intent.putExtra("bodyPart", bodyPart);
+                intent.putExtra("random1", random1);
+                intent.putExtra("random2", random2);
+                Toast.makeText(Madlibs.this, "say we a come in with a force", Toast.LENGTH_LONG).show();
+                startActivity(intent);
             }
         });
 
